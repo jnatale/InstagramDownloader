@@ -1,25 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KXo-Gj-qXF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="BbJ-WQ-K2c"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="paste share url here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vJa-v3-L6J">
+                                <rect key="frame" x="20" y="278" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" keyboardAppearance="light" returnKeyType="go"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkt-2n-ue8">
+                                <rect key="frame" x="169" y="316" width="186" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Download">
+                                    <color key="titleColor" red="0.074509803920000006" green="0.60784313729999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4OZ-RY-9vx"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ySe-BK-ofj">
+                                <rect key="frame" x="169" y="61" width="37" height="37"/>
+                                <color key="color" red="0.074509803920000006" green="0.60784313729999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlP-zh-wEw">
+                                <rect key="frame" x="20" y="316" width="141" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Help">
+                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="helpTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K7X-wl-xeg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95508579019999995" green="0.95508579019999995" blue="0.95508579019999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ySe-BK-ofj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="7OZ-nc-Bqk"/>
+                            <constraint firstItem="KXo-Gj-qXF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Aqe-vU-vYS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Xkt-2n-ue8" secondAttribute="bottom" constant="307" id="G6e-TC-KUC"/>
+                            <constraint firstItem="Xkt-2n-ue8" firstAttribute="leading" secondItem="FlP-zh-wEw" secondAttribute="trailing" constant="8" id="G9C-LQ-gyl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KXo-Gj-qXF" secondAttribute="trailing" constant="-20" id="Gve-ih-pRW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FlP-zh-wEw" secondAttribute="bottom" constant="307" id="IE8-a2-ZoX"/>
+                            <constraint firstItem="Xkt-2n-ue8" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="R9u-bI-3HD"/>
+                            <constraint firstItem="Xkt-2n-ue8" firstAttribute="centerY" secondItem="FlP-zh-wEw" secondAttribute="centerY" id="Z81-Wj-Uxg"/>
+                            <constraint firstItem="ySe-BK-ofj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="149" id="nbe-6B-Fod"/>
+                            <constraint firstItem="vJa-v3-L6J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tq2-Wn-7uw"/>
+                            <constraint firstItem="vJa-v3-L6J" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ugX-Nx-rAb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ySe-BK-ofj" secondAttribute="trailing" constant="149" id="vMi-1F-xZS"/>
+                            <constraint firstItem="FlP-zh-wEw" firstAttribute="top" secondItem="vJa-v3-L6J" secondAttribute="bottom" constant="8" id="vrz-zZ-TOD"/>
+                            <constraint firstItem="KXo-Gj-qXF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="ynM-Hf-48i"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ySe-BK-ofj" id="tQi-nY-yP4"/>
+                        <outlet property="imageView" destination="KXo-Gj-qXF" id="6dG-mQ-8Eu"/>
+                        <outlet property="urlEntry" destination="vJa-v3-L6J" id="KY9-4R-eOy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="304.5" y="360.5"/>
         </scene>
     </scenes>
 </document>
