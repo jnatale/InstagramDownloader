@@ -125,7 +125,7 @@
           // something went wrong
             NSError *error = [NSError errorWithDomain:@"DownloadFailed"
                                                  code:-1
-                                             userInfo:@{ @"Reason" : @"Invalid URL"}];
+                                             userInfo:@{ NSLocalizedFailureReasonErrorKey : NSLocalizedString(@"Invalid url",nil)}];
             completionBlock(nil,error);
             return;
         }
@@ -156,7 +156,7 @@
         {
             NSError *error = [NSError errorWithDomain:@"DownloadFailed"
                                                  code:-1
-                                             userInfo:@{ @"Reason" : @"Null image url"}];
+                                             userInfo:@{ NSLocalizedFailureReasonErrorKey : NSLocalizedString(@"Null image url",nil)}];
             completionBlock(nil,error);
             return;
         }
@@ -175,7 +175,7 @@
         {
             NSError *error = [NSError errorWithDomain:@"DownloadFailed"
                                                  code:-1
-                                             userInfo:@{ @"Reason" : @"Null image data"}];
+                                             userInfo:@{ NSLocalizedFailureReasonErrorKey : NSLocalizedString(@"Null image data",nil)}];
             completionBlock(nil,error);
         }
 
